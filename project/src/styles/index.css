@@ -18,24 +18,24 @@ body {
 }
 
 .colorBox,
-.inputBox {
-  border: solid black;
-  box-shadow: 2px 1px 2px 1px rgb(0 0 0 / 30%);
-  width: 60%;
-  margin-bottom: 0.6em;
+.inputBox input[type="text"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid black;
+  box-shadow: 2px 1px 2px 1px rgb(0 0 0 / 30%);
+  margin-bottom: 0.6em;
   font-size: 2em;
   padding: 0.25em;
   border-radius: 0.5rem;
+  width: 100%;
 }
 
-/* ColorBox */
 .colorBox {
-  height: 30%;
+  height: 50%;
 }
 
-/* InputBox */
-.inputBox {
+.inputBox label {
+  position: absolute;
+  left: -99999px;
 }

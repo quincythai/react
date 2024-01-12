@@ -2,12 +2,15 @@ import "./styles/normalize.css";
 import "./styles/index.css";
 import ColorBox from "./ColorBox";
 import InputBox from "./InputBox";
+import { useState } from "react";
 
 function App() {
+  const [color, setColor] = useState("");
+
   return (
     <div className="App">
-      <ColorBox />
-      <InputBox />
+      <ColorBox color={color} />
+      <InputBox color={color} setColor={setColor} />
     </div>
   );
 }
