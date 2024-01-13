@@ -4,11 +4,8 @@ const Button = ({ text, selection, setSelection }) => {
   return (
     <button
       type="button"
-      onClick={() => {
-        setSelection(text);
-        console.log("clicked");
-      }}
-      className={selection === text ? "selected" : null}
+      className={selection === text ? "active" : null}
+      onClick={() => setSelection(text)}
     >
       {text}
     </button>

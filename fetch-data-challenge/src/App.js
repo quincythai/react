@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import "./index.css";
+import React from "react";
+import { useState, useEffect } from "react";
 import Form from "./Form";
-import Table from "./Table";
+import List from "./List";
 
-function App() {
+const App = () => {
   const API_URL = "https://jsonplaceholder.typicode.com/";
   const [selection, setSelection] = useState("users");
   const [items, setItems] = useState([]);
@@ -12,9 +12,9 @@ function App() {
     const fetchItems = async () => {
       try {
         const response = await fetch(`${API_URL}${selection}`);
-        if (!response.ok) throw Error("Did not receive expected data");
-        const listItems = await response.json();
-        setItems(listItems);
+        if (!response.ok) throw Error("Failed to fetch data");
+        const data = await response.json();
+        setItems(data);
       } catch (err) {
         console.log(err);
       }
@@ -25,9 +25,9 @@ function App() {
   return (
     <div className="App">
       <Form selection={selection} setSelection={setSelection} />
-      <Table items={items}/>
+      <List items={items} />
     </div>
   );
-}
+};
 
 export default App;

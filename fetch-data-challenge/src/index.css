@@ -4,20 +4,16 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 22px;
-}
-
 body {
   min-height: 100vh;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 form {
   width: 100%;
-  position: fixed;
 }
 
 button {
@@ -25,7 +21,15 @@ button {
   padding: 0.5rem;
 }
 
-button.selected {
+button.active {
   background-color: black;
   color: white;
+}
+
+ul {
+  padding: 1rem;
+}
+
+li {
+  padding: 0.5rem;
 }
