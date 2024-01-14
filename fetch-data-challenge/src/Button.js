@@ -5,7 +5,10 @@ const Button = ({ text, selection, setSelection }) => {
     <button
       type="button"
       className={selection === text ? "active" : null}
-      onClick={() => setSelection(text)}
+      onClick={() => {
+        setSelection(text);
+        console.log(`clicked ${text} button`);
+      }}
     >
       {text}
     </button>

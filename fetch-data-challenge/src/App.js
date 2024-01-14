@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Form from "./Form";
-import List from "./List";
+import Table from "./Table";
 
 const App = () => {
   const API_URL = "https://jsonplaceholder.typicode.com/";
@@ -15,6 +15,7 @@ const App = () => {
         if (!response.ok) throw Error("Failed to fetch data");
         const data = await response.json();
         setItems(data);
+        console.log("fetched items");
       } catch (err) {
         console.log(err);
       }
@@ -25,7 +26,8 @@ const App = () => {
   return (
     <div className="App">
       <Form selection={selection} setSelection={setSelection} />
-      <List items={items} />
+      {/* <List items={items} /> */}
+      <Table items={items} />
     </div>
   );
 };
